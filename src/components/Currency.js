@@ -1,5 +1,4 @@
 import React from 'react';
-import './Currency.css';
 
 const Currency = ({ name, image, symbol, price, volume, priceChange, marketcap}) => {
     return (

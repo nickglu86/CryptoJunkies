@@ -11,15 +11,48 @@
 }
 
 main{
+  width: 900px;
+  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-top: 64px;
   color: white;
 }
 
+header{
+  width: 100%;
+   padding: 20px 0 0;
+}
+header .logo img{
+  width: 80px;
+} 
+header .logo figure{
+ display: flex;
+ align-items: center;
+ font-size: 40px;
+ font-weight: 700;
+}
+header nav {
+  margin: 20px auto;
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+header nav a {
+  text-decoration:  none;
+}
+ 
+.page-header{
+   text-align: center;
+    margin: 30px 0;
+    text-decoration: underline;
+    letter-spacing: 2px;
+    font-size: 30px;
+}
 .crypto-search {
-  margin-bottom: 64px;
+  margin: 25px;
+  width: 900px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,4 +82,70 @@ main{
 
 .search-input::placeholder {
   color: #e2e2e2;
+}
+
+/* Currency CSS */
+
+.currency-container{
+  display: flex;
+  justify-content: center;
+}
+
+.chart-row{
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  height: 80px;
+  border-bottom: 1px solid #d7d7d7;
+  width: 900px;
+}
+.coin{
+  display: flex;
+  align-items:  center;
+  padding-right:  24px;
+  min-width: 300px;
+}
+
+.coin h2{
+  font-size: 16px;
+  width: 150px;
+}
+
+.coin img{
+  height: 30px;
+  width: 30px;
+  margin-right: 10px;
+}
+.coin-symbol{
+    text-transform: uppercase;
+}
+
+.coin-data{
+  display: flex;
+  text-align: center;
+  justify-content:  space-between;
+}
+
+.coin-price{
+  width: 210px;
+}
+
+.coin-volume{
+  width: 230px;
+}
+
+.coin-marketcap {
+  width: 155px;
+}
+.coin-percent{
+    width: 100%;
+}
+
+.red{
+    color: red;
+}
+
+.green{
+    color: green;
 }
