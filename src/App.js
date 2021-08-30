@@ -11,7 +11,7 @@ import NotFound from './pages/NotFound';
 
 function App() {
   return (
-      <Router >
+      <Router basename="/crypto-site">
         <main>
             <Header />
             <Switch>
