@@ -6,13 +6,13 @@ const NewsFeed = () => {
     const [articles, setArticles] = useState([]);
 
     useEffect( () => {
-        const getArticles = async () => {
-            const res = await axios.get("https://newsapi.org/v2/everything?q=crypto&from=2021-08-30&sortBy=popularity&apiKey=2df2efdecd10476b97305d5c4a8b7825");
-
+        axios.get('https://newsapi.org/v2/everything?q=crypto&from=2021-08-30&sortBy=popularity&apiKey=2df2efdecd10476b97305d5c4a8b7825')
+        .then(res => {
             setArticles(res.data.articles);
-            console.log(res);
-        }
-        getArticles();
+         
+        })
+        .catch(error => console.log(error));
+ 
     } ,[]); 
 
     return (
