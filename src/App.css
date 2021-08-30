@@ -149,3 +149,19 @@ header nav a {
 .green{
     color: green;
 }
+.news-feed a {
+  text-decoration: none;
+}
+.news-item{
+  display: flex;
+  margin: 20px 0;
+}
+.news-item img {
+  width: 300px;
+}
+.news-content{
+  padding: 10px 20px;
+}
+.news-content p {
+  padding-top: 10px;
+}

@@ -1,5 +1,13 @@
+import NewsFeed from "../components/NewsFeed"
+
 const News = () => {
-    return (  <div  className="page-header"> News Page </div>  );
+    return ( 
+        <div>
+             <div  className="page-header"> News </div>  
+            <NewsFeed />
+        </div>   
+         
+         );
 }
  
 export default News;
