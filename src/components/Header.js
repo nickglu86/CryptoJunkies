@@ -16,6 +16,7 @@ const Header = () => {
               <Link to="/defi">DeFi</Link> 
               <Link to="/nft">NFT</Link> 
               <Link to="/metrics">Metrics</Link> 
+              <Link to="/learn">Learn</Link> 
               <Link to="/buycrypto">Buy Crypto</Link> 
           </nav>
         </header>

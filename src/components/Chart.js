@@ -25,7 +25,7 @@ function Chart(){
     
     
     return (
-            <div>
+            <div className="crypto-chart">
                         <div className="crypto-search">
                                 {/* <h1>Search a currency:</h1> */}
                                 <form>

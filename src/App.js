@@ -8,6 +8,7 @@ import Nft from './pages/Nft';
 import Metrics from './pages/Metrics';
 import BuyCrypto from './pages/BuyCrypto';
 import NotFound from './pages/NotFound';
+import Learn from './pages/Learn';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
               <Route path="/defi" component={DeFi} />
               <Route path="/nft" component={Nft} />
               <Route path="/metrics" component={Metrics} />
+              <Route path="/learn" component={Learn} />
               <Route path="/buycrypto" component={BuyCrypto} />
               <Route  component={NotFound} />
             </Switch>

@@ -1,10 +1,10 @@
 import Chart from "../components/Chart"
 
 const CryptoIndex = () => {
-    return (  <div>
+    return (  <section className="crypto-index">
                   <div className="page-header">CryptoIndex Page</div> 
                   <Chart />
-              </div>
+              </section>
              );
 }
  
