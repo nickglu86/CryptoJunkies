@@ -1,13 +1,11 @@
 import NewsFeed from "../components/NewsFeed"
 
 const News = () => {
-    return ( 
-        <div>
-             <div  className="page-header"> News </div>  
-            <NewsFeed />
-        </div>   
-         
-         );
+        return (  <section className="crypto-news">
+                        <div className="page-header">News Page</div> 
+                        <NewsFeed />
+                    </section>
+                );
 }
  
 export default News;

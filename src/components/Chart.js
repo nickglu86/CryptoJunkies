@@ -1,6 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import Currency from './Currency';
+import Loader from './Loader';
 
 function Chart(){
     const [coins, setCoins] = useState([]);
@@ -26,9 +27,7 @@ function Chart(){
     
     return (
             <div className="crypto-chart">
-              <div id="loader-mask" className="loader-wrapper">
-              <div className="loader"></div>
-              </div>
+                <Loader />
                         <div className="crypto-search">
                                 {/* <h1>Search a currency:</h1> */}
                                 <form>
