@@ -1,8 +1,8 @@
-const NewsItem = ({title, description, url, urlToImage}) => {
+const NewsItem = ({title, description, url, image}) => {
     return (
         <a href={url} >
             <div className="news-item">
-                <img src={urlToImage} alt="new image"></img>
+                <img src={image} alt="new image"></img>
                 <div className="news-content">
                 <h3>
                         {title}
@@ -15,5 +15,4 @@ const NewsItem = ({title, description, url, urlToImage}) => {
       );
 }
  
-export default NewsItem
-;
+export default NewsItem;

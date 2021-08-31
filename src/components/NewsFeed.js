@@ -6,19 +6,17 @@ const NewsFeed = () => {
     const [articles, setArticles] = useState([]);
 
     useEffect( () => {
-        axios.get('https://newsapi.org/v2/everything?q=crypto&from=2021-08-30&sortBy=popularity&apiKey=2df2efdecd10476b97305d5c4a8b7825')
+        axios.get('https://gnews.io/api/v4/search?q=crypto&token=9e855350d69e4b90fc112768700fa185')
         .then(res => {
             setArticles(res.data.articles);
-         
         })
         .catch(error => console.log(error));
- 
     } ,[]); 
 
     return (
         <div className="news-feed">
-                {articles.map(({title, description, url, urlToImage}) => (
-                   <NewsItem title={title} description={description} url={url} urlToImage={urlToImage} />
+                {articles.map(({title, description, url, image}) => (
+                   <NewsItem title={title} description={description} url={url} image={image} />
                 ) ) }
        </div>
     );
