@@ -16,3 +16,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 ### `npm run build`
 ### `npm run deploy`
 
+## APIs used in the Project
+
+### GNEWS API- https://gnews.io/docs/v4#introduction
+### CoinGecko API - https://www.coingecko.com/api/documentations/v3
