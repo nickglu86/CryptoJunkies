@@ -10,7 +10,7 @@ function Chart(){
         axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=25&page=1&sparkline=false')
         .then(res => {
           setCoins(res.data);
-          
+          document.getElementById("loader-mask").style.display = "none";
         })
         .catch(error => console.log(error));
       }, []);
@@ -26,6 +26,9 @@ function Chart(){
     
     return (
             <div className="crypto-chart">
+              <div id="loader-mask" className="loader-wrapper">
+              <div className="loader"></div>
+              </div>
                         <div className="crypto-search">
                                 {/* <h1>Search a currency:</h1> */}
                                 <form>

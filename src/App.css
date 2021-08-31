@@ -50,6 +50,35 @@ header nav a {
     letter-spacing: 2px;
     font-size: 30px;
 }
+
+/* Crypto-Index Page */
+/* Loader */
+.loader-wrapper{
+  position: absolute;
+  background-color: #1a1a1c;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 80px 0 0;
+}
+.loader {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(255,255,255,.3);
+  border-radius: 50%;
+  border-top-color: #fff;
+  animation: spin 1s ease-in-out infinite;
+  -webkit-animation: spin 1s ease-in-out infinite;
+}
+
+
+/* Loader End */
+
+.crypto-chart{
+  position: relative;
+}
 .crypto-search {
   margin: 25px;
   width: 900px;
@@ -83,6 +112,7 @@ header nav a {
 .search-input::placeholder {
   color: #e2e2e2;
 }
+
 
 /* Currency CSS */
 
@@ -150,6 +180,8 @@ header nav a {
 .green{
     color: green;
 }
+
+/* News Page */
 .news-feed a {
   text-decoration: none;
 }
@@ -165,4 +197,13 @@ header nav a {
 }
 .news-content p {
   padding-top: 10px;
+}
+
+
+/* Animation for Loader */
+@keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
+}
+@-webkit-keyframes spin {
+  to { -webkit-transform: rotate(360deg); }
 }
