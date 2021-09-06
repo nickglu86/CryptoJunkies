@@ -25,6 +25,7 @@ header{
 }
 header .logo img{
   width: 80px;
+  display: none;
 } 
 header .logo figure{
  display: flex;
@@ -48,6 +49,7 @@ header nav a {
     margin: 30px 0;
     letter-spacing: 2px;
     font-size: 30px;
+    display: none;
 }
 
 /* Crypto-Index Page */
@@ -77,6 +79,8 @@ header nav a {
 
 .crypto-chart, .crypto-news{
   position: relative;
+  width: 100%;
+  margin-top: 60px;
 }
 .crypto-search {
   margin: 25px;
@@ -98,14 +102,16 @@ header nav a {
   height: 50px;
   border-radius: 4px;
   border: none;
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
     -225deg,
     #ac32e4 0%,
     #7918f2 48%,
     #4801ff 100%
-  );
-
+  ); */
+  background-image: linear-gradient( 
+    -225deg, #f79323 0%, #675019 48%, #3f2719 100% );
   color: #e2e2e2;
+  font-size: 19px;
 }
 
 .search-input::placeholder {
@@ -129,6 +135,9 @@ header nav a {
   border-bottom: 1px solid #d7d7d7;
   width: 100%;
 }
+.chart-row.chart-header {
+  font-size: 19px;
+}
 .coin{
   display: flex;
   align-items:  center;
@@ -142,8 +151,8 @@ header nav a {
 }
 
 .coin img{
-  height: 30px;
-  width: 30px;
+  height: 40px;
+  width: 40px;
   margin-right: 10px;
 }
 .coin-symbol{
@@ -229,4 +238,42 @@ header nav a {
 }
 @-webkit-keyframes spin {
   to { -webkit-transform: rotate(360deg); }
+}
+
+#bitcoin{
+  display:block;
+  text-align:center;
+  color:#888888;
+  margin-right: 20px;
+}
+
+.path {
+  stroke-dasharray: 2110;
+  stroke-dashoffset: 2110;
+  stroke-width:2;
+  stroke-linecap:round;
+  animation: dash 6s linear infinite;
+  fill-opacity:0;
+  stroke:orange;
+}
+
+@keyframes dash {
+  0% {
+    stroke-dashoffset: 2110;
+    opacity:0;
+    stroke:orange;
+  }
+  15%{
+    opacity:1;
+    stroke:orange;
+  }
+  70%{
+    opacity:1;
+    stroke:orange;
+  }
+  100%{
+    stroke-dashoffset:0;
+    opacity:0;
+    stroke:yellow;
+  }
 }

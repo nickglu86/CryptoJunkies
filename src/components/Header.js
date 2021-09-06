@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import logo from '../imgs/logo.png';
+import BitcoinLogo from './BitcoinLogo';
 
 const Header = () => {
     return ( 
@@ -7,6 +8,7 @@ const Header = () => {
             <div className="logo">
                 <figure>
                     <img src={logo} alt="Cypto Junkies logo" />
+                    <BitcoinLogo />
                     <figcaption>Crypto Junkies</figcaption> 
                 </figure>
             </div>
