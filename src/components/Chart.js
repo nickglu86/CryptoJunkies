@@ -28,11 +28,24 @@ function Chart(){
     return (
             <div className="crypto-chart">
                 <Loader />
-                        <div className="crypto-search">
-                                {/* <h1>Search a currency:</h1> */}
-                                <form>
+                        {/* <div className="crypto-search">
+                            <h1>Search a currency:</h1>
+                         </div> */}
+                        <div className="currency-container">
+                          <div className="chart-row chart-header">
+                            <div className="coin">
+                               <form>
                                     <input type="text" placeholder="Search" className="search-input"  onChange={handleChange} />
                                 </form>
+                             </div>
+                            <div className="coin-data">
+                              <p className="coin-price">Price</p>
+                              <p className="coin-percent">24h %</p>
+                              <p className="coin-marketcap">Market Cap</p>
+                              <p className="coin-volume"> Volume(24h)</p>
+                              <p className="circ-supply">  Circulating Supply  </p>
+                            </div>
+                          </div>
                         </div>
                         {filteredCoins.map(coin => {
                         return(
@@ -44,6 +57,7 @@ function Chart(){
                             price={coin.current_price}
                             priceChange={coin.price_change_percentage_24h}
                             volume={coin.total_volume}
+                            circulatingSupply={coin.circulating_supply}
                             />
                         );
                         })}
