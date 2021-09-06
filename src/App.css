@@ -42,6 +42,7 @@ header nav {
 
 header nav a {
   text-decoration:  none;
+  font-size: 20px;
 }
  
 .page-header{
@@ -137,6 +138,10 @@ header nav a {
 }
 .chart-row.chart-header {
   font-size: 19px;
+}
+.chart-row.chart-header p {
+  font-weight: 700;
+  letter-spacing: 1px;
 }
 .coin{
   display: flex;
@@ -240,6 +245,7 @@ header nav a {
   to { -webkit-transform: rotate(360deg); }
 }
 
+/* Bitcoin Logo Animation */
 #bitcoin{
   display:block;
   text-align:center;
