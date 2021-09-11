@@ -31,7 +31,7 @@ function Chart(){
                         {/* <div className="crypto-search">
                             <h1>Search a currency:</h1>
                          </div> */}
-                        <div className="currency-container">
+                        <div id="first-currency-container" className="currency-container">
                           <div className="chart-row chart-header">
                             <div className="coin">
                                <form>

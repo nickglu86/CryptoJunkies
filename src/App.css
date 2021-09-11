@@ -175,12 +175,15 @@ header nav a {
 }
 
 .coin-price{
+  font-size: 21px;
   width: 160px;
   text-align: right;
   padding-right: 20px;
   letter-spacing: 1.4px;
 }
-
+.coin-marketcap, .coin-volume, .circ-supply{
+  opacity: 0.9;
+}
 .coin-volume{
   width: 160px;
   text-align: right;
@@ -197,6 +200,7 @@ header nav a {
 .coin-percent{
     width: 100px;
     font-weight: 700;
+    font-size: 18px;
 }
 
 .red{
@@ -285,3 +289,75 @@ header nav a {
     stroke:yellow;
   }
 }
+
+
+@media only screen and (max-width: 641px) { 
+  header nav {
+    display: none;
+  }
+  main {
+      width: 100%;
+  }
+  .crypto-chart, .crypto-news {
+      margin-top: 20px;
+  }
+  section.crypto-index {
+      width: 94%;
+      margin: 0 auto;
+  }
+  .coin{
+    padding-right: 0;
+  }
+
+  .coin h2 {
+    font-size: 20px;
+  }
+  .coin-data p {
+    padding:   7px 0 0;
+  }
+  .currency-container{
+    height: 110px;
+  }
+  .chart-row.chart-header {
+    border-bottom: none;
+  }
+  .chart-row.chart-header .coin-data{
+    display:none;
+  }
+  .chart-row {
+    flex-direction: column;
+    height: 100px;
+  }
+  .coin-data {
+    flex-direction: column;
+    text-align: unset;
+    flex-wrap: wrap;
+  }
+  .coin img {
+    height: 50px;
+    width: 50px;  
+}
+  .chart-row * {
+      width: 100%;
+  }
+  .coin-symbol {
+    text-align: right;
+  }
+  .coin-percent {
+    width: 50px;
+    font-size: 22px;
+    position: absolute;
+    left: 60px;
+}
+  .coin-marketcap {
+    width: 160px;
+    position: absolute;
+    left: 20px;
+    bottom: 8px;
+    display: none;
+}
+  .coin-volume, .circ-supply{
+    display: none;
+  }
+
+} 
