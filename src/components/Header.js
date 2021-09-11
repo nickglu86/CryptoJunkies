@@ -21,6 +21,7 @@ const Header = () => {
               <Link to="/learn">Learn</Link> 
               <Link to="/buycrypto">Buy Crypto</Link> 
           </nav>
+          <span className="toggle-nav"><span>Toggle navigation</span></span>
         </header>
      );
 }
