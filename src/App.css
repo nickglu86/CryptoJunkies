@@ -44,11 +44,7 @@ header nav a {
   text-decoration:  none;
   font-size: 20px;
 }
-figcaption {
-  width: auto;
-  padding-left: 25px;
-}
- 
+
 .toggle-nav{
   display: none;
 }
@@ -304,6 +300,15 @@ p.coin-percent span {
   header nav {
     display: none;
   }
+  figcaption {
+    width: 180px;
+    text-align: center;
+    padding-left: 16px;
+  }
+  #bitcoin{
+    margin-right: 10px;
+  }
+   
   main {
       width: 100%;
   }
@@ -364,7 +369,7 @@ p.coin-percent span {
     left: 70px;
 }
   p.coin-percent span {
-    font-size: 19px;
+    font-size: 17px;
     padding-left: 8px;
     opacity: 0.8;
     text-align: right;
