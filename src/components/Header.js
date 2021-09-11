@@ -2,14 +2,14 @@ import { Link } from 'react-router-dom';
 import logo from '../imgs/logo.png';
 import BitcoinLogo from './BitcoinLogo';
 
-const Header = () => {
+const Header = ({title}) => {
     return ( 
         <header>
             <div className="logo">
                 <figure>
                     <img src={logo} alt="Cypto Junkies logo" />
                     <BitcoinLogo />
-                    <figcaption>Crypto Junkies</figcaption> 
+                    <figcaption>{title}</figcaption> 
                 </figure>
             </div>
           <nav>
