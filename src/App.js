@@ -12,7 +12,7 @@ import Learn from './pages/Learn';
 
 function App() {
   return (
-      <Router basename="/crypto-site">
+      <Router basename="/cryptojunkies">
         <main>
             <Header />
             <Switch>

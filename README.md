@@ -1,6 +1,6 @@
 # CryptoJunkies - React 
 
-https://nickglu86.github.io/crypto-site/
+https://nickglu86.github.io/cryptojunkies/
 
 This project was bootstrapped with ...
 
