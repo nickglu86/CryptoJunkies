@@ -3,6 +3,7 @@ import Loader from "./Loader";
 import NewsItem from "./NewsItem";
 import PreloadedLogos from "./PreloadedLogos";
 
+
 const CryptoNewsFeed = () => {
     let { data, error, isLoaded } = useApiRequest(process.env.REACT_APP_CRYPTO_NEWS);
 
@@ -15,10 +16,10 @@ const CryptoNewsFeed = () => {
 
     return (
         <div className="news-feed">
-        <PreloadedLogos />
-                {data.articles.map(({index, title, description, url, image}) => (
-                   <NewsItem key={index} title={title} description={description} url={url} image={image} />
-                ) ) }
+          <PreloadedLogos />
+                  {data.articles.map(({index, title, description, url, image}) => (
+                     <NewsItem key={index} title={title} description={description} url={url} image={image} />
+                  ) ) }
        </div>
     );
 }

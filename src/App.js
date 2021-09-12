@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, useParams} from 'react-router-dom';
 import CryptoIndex from './pages/CryptoIndex';
 import News from './pages/News';
 import DeFi from './pages/DeFi';
@@ -9,6 +9,7 @@ import Metrics from './pages/Metrics';
 import BuyCrypto from './pages/BuyCrypto';
 import NotFound from './pages/NotFound';
 import Learn from './pages/Learn';
+import { Component } from 'react';
 
 function App() {
   return (
