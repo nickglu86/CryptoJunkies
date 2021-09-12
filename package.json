@@ -1,6 +1,6 @@
 {
-  "name": "crypto-site",
-  "homepage": "https://nickglu86.github.io/crypto-site/",
+  "name": "cryptojunkies",
+  "homepage": "https://nickglu86.github.io/cryptojunkies/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
