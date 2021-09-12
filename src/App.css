@@ -44,6 +44,15 @@ header nav a {
   text-decoration:  none;
   font-size: 20px;
 }
+header nav a[data-dev=indev]::after {
+  content: 'inDev';
+  background-color: red;
+  font-size: 15px;
+  vertical-align: top;
+  padding: 0 5px;
+  margin-left: 11px;
+  border-radius: 5px;
+}
 
 .toggle-nav{
   display: none;
@@ -235,6 +244,7 @@ p.coin-percent span {
 .news-item img {
   width: 300px;
   max-height: 200px;
+  border-radius: 5px;
 }
 .news-content{
   padding: 10px 20px;
@@ -245,6 +255,11 @@ p.coin-percent span {
 .news-content p {
   padding-top: 10px;
   font-size: 16px;
+}
+
+/* Metrics Page */
+.fear-and-greed{
+  display: none;
 }
 
 
@@ -297,6 +312,7 @@ p.coin-percent span {
 
 
 @media only screen and (max-width: 641px) { 
+    /* Header + Nav */
   header{
     padding-top: 0;
   }
@@ -315,26 +331,26 @@ p.coin-percent span {
     padding: 0 20px;
     flex-direction: column;
     justify-content: flex-start;
-}
-header nav.open {
-  display: flex!important;
-  margin-top: 80px;
-}
-  header nav a {
-    font-size: 30px;
-    height: 70px;
-    line-height: 70px;
-}
-  figcaption {
-    width: 100%;
-    text-align: center;
-    font-size: 28px;
-    line-height: 80px;
   }
-  header .logo img {
-    width: 80px;
-    padding: 10px;
-}
+  header nav.open {
+    display: flex!important;
+    margin-top: 80px;
+  }
+    header nav a {
+      font-size: 30px;
+      height: 70px;
+      line-height: 70px;
+  }
+    figcaption {
+      width: 100%;
+      text-align: center;
+      font-size: 28px;
+      line-height: 80px;
+    }
+    header .logo img {
+      width: 80px;
+      padding: 10px;
+  }
   #bitcoin{
     margin-right: 5px;
     padding: 10px;
@@ -346,14 +362,63 @@ header nav.open {
       width: 60px;
       height: 60px;
   }
+    
+  .toggle-nav {
+    position: fixed;
+    top: 14px;
+    right: 13px;
+    z-index: 11;
+    display: block;
+    width: 46px;
+    height: 50px;
+    cursor: pointer;
+    background: #1a1a1c;
+  }
+  .toggle-nav span,
+  .toggle-nav span:before,
+  .toggle-nav span:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    display: block;
+    text-indent: -9999px;
+    background-color: #fff;
+    height: 3px;
+    width: 100%;
+    transition: background-color 0.3s ease-in-out, transform 0.5s ease-in-out, top 0.5s ease-in-out;
+  }
+  .toggle-nav span {
+    top: 10px;
+    width: 40px;
+  }
+  .toggle-nav span:before {
+    top: 14px;
+  }
+  .toggle-nav span:after {
+    top: 28px;
+  }
+  .toggle-nav.open  span {
+    transform: rotate(45deg);
+    top: 25px;
+  }
+  .toggle-nav.open span:before {
+    background-color: transparent;
+  }
+  .toggle-nav.open span:after {
+    top: 0;
+    transform: rotate(-90deg);
+  }
    
+  /* General */
   main {
       width: 100%;
   }
+
+  /* Crypto-Index Page */
   .crypto-chart, .crypto-news {
       margin-top: 20px;
   }
-  section.crypto-index {
+  section.crypto-index, section.crypto-news {
       width: 94%;
       margin: 0 auto;
       padding-top: 80px;
@@ -426,50 +491,30 @@ header nav.open {
   .coin-volume, .circ-supply{
     display: none;
   }
-  
-  .toggle-nav {
-    position: fixed;
-    top: 14px;
-    right: 13px;
-    z-index: 11;
-    display: block;
-    width: 46px;
-    height: 50px;
-    cursor: pointer;
-    background: #1a1a1c;
-  }
-  .toggle-nav span,
-  .toggle-nav span:before,
-  .toggle-nav span:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    display: block;
-    text-indent: -9999px;
-    background-color: #fff;
-    height: 3px;
-    width: 100%;
-    transition: background-color 0.3s ease-in-out, transform 0.5s ease-in-out, top 0.5s ease-in-out;
-  }
-  .toggle-nav span {
-    top: 10px;
-    width: 40px;
-  }
-  .toggle-nav span:before {
-    top: 14px;
-  }
-  .toggle-nav span:after {
-    top: 28px;
-  }
-  .toggle-nav.open  span {
-    transform: rotate(45deg);
-    top: 25px;
-  }
-  .toggle-nav.open span:before {
-    background-color: transparent;
-  }
-  .toggle-nav.open span:after {
-    top: 0;
-    transform: rotate(-90deg);
+
+    /* News + NFT Page */
+    .news-item {
+      flex-direction: column;
+    }
+    .news-content {
+      padding: 10px 0px;
+    }
+      .news-content h3 {
+        font-size: 22px;
+    }
+    .news-item figure , .news-content{
+      width: 95%;
+      min-width: 310px;
+    }
+    .news-item img {
+      width: 100%;
+    }
+    .news-item {
+      margin: 0 auto 40px;
+      width: 90%;
+      align-items: center;
+    }
+    .news-content p {
+      opacity: 0.8;
   }
 } 
