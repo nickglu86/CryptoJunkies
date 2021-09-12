@@ -36,7 +36,7 @@ class App extends Component{
     
      
       return(
-        <Router basename="/crypto-site">
+        <Router basename="/cryptojunkies">
               {  console.log('App is a class component')}
            
             <main>
