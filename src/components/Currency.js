@@ -13,11 +13,12 @@ const Currency = ({ name, image, symbol, price, volume, priceChange, marketcap, 
                   <p className="coin-price">${price}</p>
                  
                   {priceChange < 0 ? (
-                        <p className="coin-percent red">{priceChange.toFixed(2)}%</p>
+                        <p className="coin-percent red">{priceChange.toFixed(2)}% <span>(24h)</span></p>
                     ) : (
-                        <p className="coin-percent green">{priceChange.toFixed(2)}%</p>
+                        <p className="coin-percent green">+{priceChange.toFixed(2)}%<span>(24h)</span></p>
                 
                     )
+                    
                    }
                    <p className="coin-marketcap">
                      $ {marketcap.toLocaleString()}
