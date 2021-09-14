@@ -1,6 +1,6 @@
 import './App.css';
 import Header from './components/Header';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route, useParams} from 'react-router-dom';
 import CryptoIndex from './pages/CryptoIndex';
 import News from './pages/News';
 import DeFi from './pages/DeFi';

@@ -3,6 +3,7 @@ import axios from 'axios';
 import Currency from './Currency';
 import Loader from './Loader';
 
+
 function Chart(){
     const [coins, setCoins] = useState([]);
     const [search, setSearch] = useState('');

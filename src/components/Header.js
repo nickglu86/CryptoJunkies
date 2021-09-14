@@ -11,14 +11,13 @@ const Header = () => {
 
     };
 
-        
     return ( 
         <header>
             <div className="logo">
                 <figure>
                     <img src={logo} alt="Cypto Junkies logo" />
                     <BitcoinLogo />
-                    <figcaption>Crypto Junkies</figcaption> 
+                    <figcaption>{title}</figcaption> 
                 </figure>
             </div>
           <nav className={`header-nav ${isOpen ? "" : "open"}`} onClick={toggleMobNav}> 
