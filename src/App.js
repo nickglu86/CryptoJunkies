@@ -1,4 +1,5 @@
 import './App.css';
+import React, { Component } from 'react'
 import Header from './components/Header';
 import { BrowserRouter as Router, Switch, Route, useParams} from 'react-router-dom';
 import CryptoIndex from './pages/CryptoIndex';
@@ -11,11 +12,15 @@ import NotFound from './pages/NotFound';
 import Learn from './pages/Learn';
 import Footer from './components/Footer';
 
-function App() {
-  return (
+class App extends Component {
+  state = {
+    title: 'Cypto Junkies'
+  }
+  render() {
+    return (
       <Router basename="/cryptojunkies">
         <main>
-            <Header />
+            <Header title={this.state.title} />
             <Switch>
               <Route path="/" component={CryptoIndex}  exact/>
               <Route path="/news" component={News} />
@@ -26,10 +31,11 @@ function App() {
               <Route path="/invest" component={Invest} />
               <Route  component={NotFound} />
             </Switch>
-            <Footer />
+            <Footer  title={this.state.title} />
         </main>
     </Router>
   );
+  }
 }
 
 export default App;

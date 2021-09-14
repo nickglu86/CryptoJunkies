@@ -3,7 +3,7 @@ import logo from '../imgs/logo.png';
 import BitcoinLogo from './BitcoinLogo';
 import React, { useState } from 'react'
 
-const Header = () => {
+const Header = ({title}) => {
      const [isOpen, setOpen] = useState("false");
 
     const toggleMobNav = () => {
