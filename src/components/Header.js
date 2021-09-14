@@ -21,14 +21,14 @@ const Header = () => {
                     <figcaption>Crypto Junkies</figcaption> 
                 </figure>
             </div>
-          <nav className={`${isOpen ? "" : "open"}`} onClick={toggleMobNav}> 
+          <nav className={`header-nav ${isOpen ? "" : "open"}`} onClick={toggleMobNav}> 
               <Link to="/" >Crypto Index</Link> 
               <Link to="/news">News</Link> 
               <Link to="/nft">NFT</Link> 
               <Link to="/defi" data-dev="indev">DeFi</Link> 
               <Link to="/metrics" data-dev="indev">Metrics</Link> 
+              <Link to="/invest" data-dev="indev">Invest</Link> 
               <Link to="/learn" data-dev="indev">Learn</Link> 
-              <Link to="/buycrypto" data-dev="indev">Buy Crypto</Link> 
           </nav>
           <span  className={`toggle-nav ${isOpen ? "" : "open"}`} onClick={toggleMobNav} >
              <span>Toggle navigation</span>

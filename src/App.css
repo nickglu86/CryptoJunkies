@@ -262,6 +262,62 @@ p.coin-percent span {
   display: none;
 }
 
+/* Footer */
+footer a{
+  text-decoration: none;
+}
+footer{
+    margin-top: 60px;
+    padding-top: 54px;
+    padding-bottom: 20px;
+    color: #eaeaea;
+    position: relative;
+    width: 100%;
+    position: relative;
+}
+.site-info, .about-us{
+  margin-bottom: 60px;
+}
+footer h4{
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+.site-info-links{
+  padding: 0 0 20px 0;
+  margin-right: 10px;
+}
+.site-info-links a{
+  display: block;
+  font-size: 15px;
+}
+.site-info-links a:hover{
+  text-decoration: underline;
+  transition: 3s;
+}
+.footer-logo{
+  width: 20%;
+}
+
+.about-us {
+  display: flex;
+  justify-content: space-between;
+}
+.about-us figcaption {
+  font-size: 28px;
+}
+.about-content{
+  margin-bottom: 20px;
+  max-width: 600px;
+}
+footer .footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+footer .footer a{
+  padding: 0 10px;
+} 
 
 /* Animation for Loader */
 @keyframes spin {
@@ -472,7 +528,7 @@ p.coin-percent span {
     font-size: 22px;
     position: absolute;
     left: 70px;
-}
+  }
   p.coin-percent span {
     font-size: 17px;
     padding-left: 8px;
@@ -487,7 +543,7 @@ p.coin-percent span {
     left: 20px;
     bottom: 8px;
     display: none;
-}
+  }
   .coin-volume, .circ-supply{
     display: none;
   }
@@ -516,5 +572,25 @@ p.coin-percent span {
     }
     .news-content p {
       opacity: 0.8;
+  }
+
+  /* Footter */
+  footer{
+    padding: 0 10px;
+  }
+  .footer-logo {
+    width: 100%;
+  }
+  .about-us, footer .footer{
+    flex-direction: column;
+  }
+  .about-content {
+    width: auto;
+  }
+  .copy{
+    margin-bottom: 10px;
+  }
+  nav.footer-nav {
+    display: flex;
   }
 } 
