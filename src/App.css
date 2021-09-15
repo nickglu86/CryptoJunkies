@@ -29,12 +29,13 @@ header .logo img{
   width: 80px;
   display: none;
 } 
-header .logo figure{
+header .logo figure, footer figure{
  display: flex;
  align-items: center;
  font-size: 40px;
  font-weight: 700;
 }
+
 header nav {
   margin: 20px auto;
   width: 100%;
@@ -60,17 +61,19 @@ header nav a[data-dev=indev]::after {
   display: none;
 }
 .page-header{
-   text-align: center;
-    margin: 30px 0;
-    letter-spacing: 2px;
-    font-size: 30px;
-    display: none;
+  text-align: center;
+  margin: 100px 0;
+  letter-spacing: 2px;
+  font-size: 30px;
+  /* display: none; */
+  min-height: 300px;
 }
 
 /* Crypto-Index Page */
 /* Loader */
 .loader-wrapper{
   position: absolute;
+  z-index: 1000;
   background-color: #1a1a1c;
   width: 100%;
   display: flex;
@@ -95,7 +98,10 @@ header nav a[data-dev=indev]::after {
 .crypto-chart, .crypto-news{
   position: relative;
   width: 100%;
-  margin-top: 60px;
+  margin-top: 20px;
+}
+.news-feed {
+  margin-top: 20px;
 }
 .crypto-search {
   margin: 25px;
@@ -189,8 +195,9 @@ header nav a[data-dev=indev]::after {
 }
 
 .coin-price{
-  font-size: 21px;
   width: 160px;
+  font-size: 21px;
+  font-weight: 700;
   text-align: right;
   padding-right: 20px;
   letter-spacing: 1.4px;
@@ -213,7 +220,6 @@ header nav a[data-dev=indev]::after {
 }
 .coin-percent{
     width: 100px;
-    font-weight: 700;
     font-size: 18px;
 }
 p.coin-percent span {
@@ -267,6 +273,7 @@ p.coin-percent span {
 /* Footer */
 footer a{
   text-decoration: none;
+  padding: 0 10px;
 }
 footer{
     margin-top: 60px;
@@ -277,8 +284,18 @@ footer{
     width: 100%;
     position: relative;
 }
+footer .footer{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+footer figure{
+  width: 350px;
+  position: relative;
+}
 .site-info, .about-us{
-  margin-bottom: 60px;
+  margin-bottom: 40px;
 }
 footer h4{
   font-weight: 700;
@@ -292,13 +309,11 @@ footer h4{
 .site-info-links a{
   display: block;
   font-size: 15px;
+  margin-bottom: 5px;
 }
 .site-info-links a:hover{
   text-decoration: underline;
   transition: 3s;
-}
-.footer-logo{
-  width: 20%;
 }
 
 .about-us {
@@ -310,16 +325,12 @@ footer h4{
 }
 .about-content{
   margin-bottom: 20px;
-  max-width: 600px;
+  max-width: 440px;
 }
-footer .footer{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.follow-us.links img{
+  width: 44px;
 }
-footer .footer a{
-  padding: 0 10px;
-} 
+
 
 /* Animation for Loader */
 @keyframes spin {
@@ -471,11 +482,16 @@ footer .footer a{
     main {
         width: 100%;
     }
+    .loader-wrapper{
+      padding-top: 20vh;
+    }
+
+    .page-header {
+      margin: 200px 0;
+      min-height: 100vh;
+    }
 
     /* Crypto-Index Page */
-    .crypto-chart, .crypto-news {
-        margin-top: 20px;
-    }
     section.crypto-index, section.crypto-news {
         width: 94%;
         margin: 0 auto;
@@ -484,7 +500,6 @@ footer .footer a{
     .coin{
       padding-right: 0;
     }
-
     .coin h2 {
       font-size: 20px;
       padding-left: 10px;
@@ -561,7 +576,7 @@ footer .footer a{
           font-size: 22px;
       }
       .news-item figure , .news-content{
-        width: 95%;
+        width: 100%;
         min-width: 310px;
       }
       .news-item img {
@@ -578,26 +593,36 @@ footer .footer a{
 
     /* Footter */
     footer{
-      padding: 0 10px;
+      padding: 0 15px;
     }
     .footer-logo {
       width: 100%;
     }
-    .about-us, footer .footer{
+    .about-us{
       flex-direction: column;
+    }
+    footer .footer{
+      flex-direction: column-reverse;
     }
     .about-content {
       width: auto;
     }
     .copy{
       margin-bottom: 10px;
+      font-size: 14px;
     }
+    .footer-links{
+      margin-bottom: 30px;
+    }
+    footer figure{
+      margin-bottom: 20px;
+     }
     nav.footer-nav {
       display: flex;
       flex-wrap: wrap;
       justify-content: space-evenly;
     }
     footer .footer a {
-      padding: 5px 10px;
+      padding: 8px 18px;
   }
 } 
