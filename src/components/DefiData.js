@@ -205,7 +205,7 @@ function DefiData() {
                 <div className="defi-market-column">
                     <div className="defi-market-box defi-market-total">
                         <h2>Total Value Locked (USD)</h2>
-                        <span>{data.All.total} 111122121</span>
+                        <span>{data.All.total}</span>
                     </div>
                     <div className="defi-market-box defi-market-dominance">
                         <h2>
