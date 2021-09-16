@@ -18,5 +18,6 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
 ## APIs used in the Project
 
-### GNEWS API - https://gnews.io/docs/v4
 ### CoinGecko API - https://www.coingecko.com/api/documentations/v3
+### DEFIPULSE API https://docs.defipulse.com/api-docs-by-provider/defi-pulse-data
+### GNEWS API - https://gnews.io/docs/v4
