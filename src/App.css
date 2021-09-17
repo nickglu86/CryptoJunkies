@@ -95,7 +95,7 @@ header nav a[data-dev=indev]::after {
 
 /* Loader End */
 
-.crypto-chart, .crypto-news{
+.crypto-chart, .crypto-news, .defi{
   position: relative;
   width: 100%;
   margin-top: 20px;

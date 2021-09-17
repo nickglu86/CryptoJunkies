@@ -10,6 +10,9 @@ function DefiData() {
     // if (!isLoaded) {
     //   return <Loader />;
     // }
+
+    let {data : data1, error, isLoaded} = useApiRequest(process.env.REACT_APP_GAS_PRICE);
+
     const data = {
         "All": {
             "total": 90630229601,
@@ -198,10 +201,22 @@ function DefiData() {
             "dominance_pct": 61.31169094095259
         }
     }
+ 
 
+      console.log(data1)
     return (
-        <div className="news-feed">
+        <div className="defi-data">
+            <div className="eth-gas">
+            <h2>Gas Prices</h2>
+            <div>fast :  {data1.fast}</div>
+            <div>fastest :  {data1.fastest}</div>
+            <div>safelow :  {data1.safeLow}</div>
+            <div>average :  {data1.average}</div>
+            <div>block time: {data1.block_time}</div> 
+
+            </div>
             <div className="defi-market-data">
+            <h2>Defi</h2>
                 <div className="defi-market-column">
                     <div className="defi-market-box defi-market-total">
                         <h2>Total Value Locked (USD)</h2>
@@ -214,7 +229,22 @@ function DefiData() {
                           <span> {data.All.dominance_pct} %</span>
                     </div>               
                 </div>
+                <div className="tlv-market-column">
+                    <div className="tvl-defi">
+                        <h2>Total Value Locked (USD) in DeFi</h2>
+                        <span>{data.All.value.total.USD.value}</span>
+                    </div>             
+                    <div className="tvl-defi">
+                        <h2>ETH in DeFi</h2>
+                        <span>{data.All.value.total.ETH.value}</span>
+                    </div>  
+                    <div className="tvl-defi">
+                         <h2>BTC in DeFi</h2>
+                         <span>{data.All.value.total.BTC.value}</span>
+                    </div>  
+                </div>
             </div>
+             
        </div>
     );
 }
