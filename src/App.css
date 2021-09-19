@@ -95,7 +95,7 @@ header nav a[data-dev=indev]::after {
 
 /* Loader End */
 
-.crypto-index, .crypto-news, .defi{
+.crypto-index, .crypto-news, .defi, .crypto-metrics{
   position: relative;
   width: 100%;
   margin-top: 20px;
@@ -267,9 +267,33 @@ p.coin-percent span {
 
 /* Metrics Page */
 .fear-and-greed{
-  display: none;
+  /* display: none; */
+  display: flex;
+  justify-content: center;
 }
-
+.gaf-elem{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+    margin: 15px 0;
+}
+.fear-and-greed img , .history-data{
+  width: 400px;
+}
+.history-data, .history-data * {
+  color: black;
+  background-color: white;
+}
+.history-data{
+  padding: 20px 40px;
+}
+.gaf-values{
+  padding: 20px 0;
+}
+.gaf-num-value {
+  line-height: 38px;
+}
 /* Footer */
 footer a{
   text-decoration: none;
@@ -492,7 +516,7 @@ footer h4{
     }
 
     /* Crypto-Index Page */
-    section.crypto-index, section.crypto-news {
+    section.crypto-index, section.crypto-news, section.crypto-metrics {
         width: 94%;
         margin: 0 auto;
         padding-top: 80px;
@@ -590,6 +614,17 @@ footer h4{
       .news-content p {
         opacity: 0.8;
     }
+
+    /* Metrics */
+    .fear-and-greed{
+      flex-direction: column;
+      align-items: center;
+    }
+    .fear-and-greed img, .history-data {
+      width: 100%;
+      max-width: 340px;
+   }
+   
 
     /* Footter */
     footer{
