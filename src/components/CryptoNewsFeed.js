@@ -5,7 +5,9 @@ import PreloadedLogos from "./PreloadedLogos";
 
 
 const CryptoNewsFeed = () => {
-    let { data, error, isLoaded } = useApiRequest(process.env.REACT_APP_CRYPTO_NEWS);
+    const cryptoNewsURL = process.env.REACT_APP_CRYPTO_NEWS;
+    
+    let { data, error, isLoaded } = useApiRequest(cryptoNewsURL);
 
     if (error !== null) {
       return <div> Error: {error.message}</div>;

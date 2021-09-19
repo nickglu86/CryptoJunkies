@@ -3,7 +3,9 @@ import Loader from "./Loader";
 import NewsItem from "./NewsItem";
 
 const NftNewsFeed = () => {
-    let { data, error, isLoaded } = useApiRequest(process.env.REACT_APP_NFT_NEWS);
+   const nftNewsURL = process.env.REACT_APP_NFT_NEWS;
+
+    let { data, error, isLoaded } = useApiRequest(nftNewsURL);
 
     if (error !== null) {
       return <div> Error: {error.message}</div>;

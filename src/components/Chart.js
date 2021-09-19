@@ -6,8 +6,9 @@ import Loader from './Loader';
 
 function Chart(){
     const [search, setSearch] = useState('');
-
-    let { data : coins, error, isLoaded } = useApiRequest(process.env.REACT_APP_CRYPTO_INDEX);
+    const chartDataURL = process.env.REACT_APP_CRYPTO_INDEX;
+    
+    let { data : coins, error, isLoaded } = useApiRequest(chartDataURL);
 
     if (error !== null) {
       return <div> Error: {error.message}</div>;

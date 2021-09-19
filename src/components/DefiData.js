@@ -10,9 +10,11 @@ function DefiData() {
     // if (!isLoaded) {
     //   return <Loader />;
     // }
+    const ethGasPriceURL = process.env.REACT_APP_GAS_PRICE;
+    const ethUSDPriceURL ='https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,JPY,EUR';
 
-    let {data : gasPricesData, error, isLoaded} = useApiRequest(process.env.REACT_APP_GAS_PRICE);
-    let {data : ethUSDPrice, error: erroreth, isLoaded : isLoadedEth} = useApiRequest('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,JPY,EUR');
+    let {data : gasPricesData, error, isLoaded} = useApiRequest(ethGasPriceURL);
+    let {data : ethUSDPrice, error: erroreth, isLoaded : isLoadedEth} = useApiRequest(ethUSDPriceURL);
     
     const data = {
         "All": {
