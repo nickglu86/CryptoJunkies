@@ -7,8 +7,8 @@ import { useEffect, useState } from "react";
     const [error, setError] = useState(null);
   
     useEffect(() => {
-      const fetchData = () => {
-        axios
+      const fetchData = async () => {
+        await axios
           .get(url)
           .then(response => {
             setData(response.data);
@@ -27,4 +27,3 @@ import { useEffect, useState } from "react";
   };
 
   export default useApiRequest;
-  //https://gnews.io/api/v4/search?q=nft&lang=en&token=9e855350d69e4b90fc112768700fa185

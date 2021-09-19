@@ -11,8 +11,9 @@ function DefiData() {
     //   return <Loader />;
     // }
 
-    let {data : data1, error, isLoaded} = useApiRequest(process.env.REACT_APP_GAS_PRICE);
-
+    let {data : gasPricesData, error, isLoaded} = useApiRequest(process.env.REACT_APP_GAS_PRICE);
+    let {data : ethUSDPrice, error: erroreth, isLoaded : isLoadedEth} = useApiRequest('https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,JPY,EUR');
+    
     const data = {
         "All": {
             "total": 90630229601,
@@ -201,18 +202,16 @@ function DefiData() {
             "dominance_pct": 61.31169094095259
         }
     }
- 
-
-      console.log(data1)
+    console.log(ethUSDPrice)
     return (
         <div className="defi-data">
             <div className="eth-gas">
-            <h2>Gas Prices</h2>
-            <div>fast :  {data1.fast}</div>
-            <div>fastest :  {data1.fastest}</div>
-            <div>safelow :  {data1.safeLow}</div>
-            <div>average :  {data1.average}</div>
-            <div>block time: {data1.block_time}</div> 
+            <h2>Gas Prices {ethUSDPrice.USD / 1000000000 * gasPricesData.fast}$ </h2>
+            <div>fast :  {gasPricesData.fast}</div>
+            <div>fastest :  {gasPricesData.fastest}</div>
+            <div>safelow :  {gasPricesData.safeLow}</div>
+            <div>average :  {gasPricesData.average}</div>
+            <div>block time: {gasPricesData.block_time}</div> 
 
             </div>
             <div className="defi-market-data">
@@ -242,6 +241,9 @@ function DefiData() {
                          <h2>BTC in DeFi</h2>
                          <span>{data.All.value.total.BTC.value}</span>
                     </div>  
+                </div>
+                <div className="devices-column">
+          
                 </div>
             </div>
              
