@@ -22,8 +22,10 @@ function BitcoinFearIndex() {
        switch (true) {
             case  (avrgValue < 24):
                   return 'Extreme Fear'
-            case (avrgValue <= 49):
+            case (avrgValue <= 46):
                  return 'Fear'
+             case (avrgValue <= 54):
+                  return 'Neutral'               
             case ( avrgValue <= 74):
                  return 'Greed'
             case (avrgValue > 74):
@@ -34,6 +36,10 @@ function BitcoinFearIndex() {
     }
     const thisWeekGAF = calcRangeGAF(fagData.data.slice(0,7));
     const lastWeekGAF = calcRangeGAF(fagData.data.slice(7));
+    const todayGAFLabel = fagData.data[0].value_classification;
+    const yesterdayGAFLabel = fagData.data[1].value_classification;
+    const thisWeekGAFLabel = getGAFLabel(thisWeekGAF);
+    const lastWeekGAFLabel = getGAFLabel(lastWeekGAF);
 
     return (  
           <div className="fear-and-greed" >
@@ -41,33 +47,33 @@ function BitcoinFearIndex() {
             <div className="history-data">
                 <h3>Historical Values</h3>
                 <div className="gaf-values">
-                <div  className="gaf-elem">
+                   <div  className="gaf-elem" gaf-attr={todayGAFLabel}>
                       <div className="gaf-time">
                         <span>Now</span>
-                        <div>{fagData.data[0].value_classification} </div>
+                        <div className="gaf-lbl">{todayGAFLabel} </div>
                       </div>
                       <div className="gaf-num-val">{fagData.data[0].value} </div>
                     </div>
-                    <div  className="gaf-elem">
+                    <div  className="gaf-elem" gaf-attr={yesterdayGAFLabel}>
                       <div className="gaf-time">
                        <span>Yesterday</span>
-                       <div>{fagData.data[1].value_classification} </div>
+                       <div className="gaf-lbl">{yesterdayGAFLabel} </div>
                       </div>
-                      <div className="gaf-num-value">{fagData.data[1].value} </div>
+                      <div className="gaf-num-val">{fagData.data[1].value} </div>
                     </div>
-                    <div  className="gaf-elem">
+                    <div  className="gaf-elem" gaf-attr={thisWeekGAFLabel}>
                       <div className="gaf-time">
                        <span>This Week</span>
-                       <div> {getGAFLabel(thisWeekGAF)}</div>
+                       <div className="gaf-lbl"> {thisWeekGAFLabel}</div>
                       </div>
-                      <div className="gaf-num-value"> {thisWeekGAF}</div>
+                      <div className="gaf-num-val"> {thisWeekGAF}</div>
                     </div>
-                    <div  className="gaf-elem">
+                    <div  className="gaf-elem" gaf-attr={lastWeekGAFLabel}>
                       <div className="gaf-time">
                        <span>Last Week</span>
-                       <div> {getGAFLabel(lastWeekGAF)}</div>
+                       <div className="gaf-lbl"> {lastWeekGAFLabel}</div>
                       </div>
-                      <div className="gaf-num-value">{lastWeekGAF}</div>
+                      <div className="gaf-num-val">{lastWeekGAF}</div>
                     </div>
 
                 </div>
