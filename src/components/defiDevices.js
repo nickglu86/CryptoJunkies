@@ -1,4 +1,4 @@
-function defiDevices({dominance_name, total, dominance_pct}) {
+function DefiDevices({dominance_name, total, dominance_pct}) {
     return (  
         <div className="row">
             <div className="tvl-defi">
@@ -18,4 +18,4 @@ function defiDevices({dominance_name, total, dominance_pct}) {
     );
 }
 
-export default defiDevices;
+export default DefiDevices;

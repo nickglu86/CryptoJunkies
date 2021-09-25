@@ -95,7 +95,7 @@ header nav a[data-dev=indev]::after {
 
 /* Loader End */
 
-.crypto-index, .crypto-news, .defi, .crypto-metrics, .invest{
+.crypto-index, .crypto-news, .defi, .crypto-metrics, .invest, .crypto-learn{
   position: relative;
   width: 100%;
   margin-top: 20px;
@@ -268,7 +268,7 @@ p.coin-percent span {
 /* DEFi Page */
 
 .defi-data{
-  display: none;
+  /* display: none; */
 }
 /* Metrics Page */
 .fear-and-greed{
@@ -398,6 +398,52 @@ p.coin-percent span {
 }
 .binance-content .sign-up{
   background: #dbc72a;
+}
+
+
+/* LEarn */
+.crypto-learn .container{
+  margin:  0 auto;
+}
+.crypto-learn .resources{
+  display: flex;
+  justify-content: center;
+}
+.crypto-learn h3 {
+  margin-top: 40px;
+  margin-bottom: 10px;
+  width: 100%;
+  font-size: 30px;
+  text-align: center;
+  border-top: 1px solid white;
+  border-bottom: 1px solid white;
+}
+img.svg-logo {
+  background-color: white;
+  height: 200px;
+  width: 300px;
+  margin: 20px;
+  border-radius: 10px;
+  opacity:0.8;
+}
+img.svg-logo:hover{
+  opacity:1;
+  transition: opacity .5s ease-out;
+  -moz-transition: opacity .5s ease-out;
+  -webkit-transition: opacity .5s ease-out;
+  -o-transition: opacity .5s ease-out;
+}
+.block{
+  padding: 23px;
+}
+.coingecko{
+  padding: 73px 50px;
+}
+.defi-pulse{
+  padding: 71px 10px;
+}
+.staking-rewards{
+  padding: 45px 0;
 }
 /* Footer */
 footer a{
@@ -621,7 +667,7 @@ footer h4{
     }
 
     /* Crypto-Index Page */
-    section.crypto-index, section.crypto-news, section.crypto-metrics, section.invest {
+    section.crypto-index, section.crypto-news, section.crypto-metrics, section.invest, section.crypto-learn {
         width: 94%;
         margin: 0 auto;
         padding-top: 80px;
@@ -745,6 +791,15 @@ footer h4{
     padding-bottom: 80px;
    }
 
+   /* Learn */
+   .crypto-learn .resources {
+    flex-direction: column;
+    align-items: center;
+   }
+   .crypto-learn .svg-logo{
+     opacity: 1;
+   }
+  
     /* Footter */
     footer{
       padding: 0 15px;

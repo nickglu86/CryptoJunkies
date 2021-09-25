@@ -2,8 +2,12 @@ import useApiRequest from "./useApiRequest";
 import Loader from "./Loader";
 
 function BitcoinFearIndex() {
-    let { data: fagData, error, isLoaded } = useApiRequest('https://api.alternative.me/fng/?limit=14');
- 
+
+    const bitcoinFearIndexIMG = 'https://alternative.me/crypto/fear-and-greed-index.png';
+    const bitcoinFearIndexAPIUrl = process.env.REACT_APP_BITCOIN_FEAR_GREED_INDEX;
+    
+    let { data: fagData, error, isLoaded } = useApiRequest(bitcoinFearIndexAPIUrl);
+    
     const days = ['Toda', 'Yesterday', 'Last Week'];
     if (error !== null) {
         return <div> Error: {error.message}</div>;
@@ -43,7 +47,7 @@ function BitcoinFearIndex() {
 
     return (  
           <div className="fear-and-greed" >
-              <img src="https://alternative.me/crypto/fear-and-greed-index.png" alt="Latest Crypto Fear & Greed Index" />
+              <img src={bitcoinFearIndexIMG} alt="Latest Crypto Fear & Greed Index" />
             <div className="history-data">
                 <h3>Historical Values</h3>
                 <div className="gaf-values">

@@ -13,7 +13,7 @@ function DefiData() {
     const ethGasPriceURL = process.env.REACT_APP_GAS_PRICE;
     const ethUSDPriceURL ='https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,JPY,EUR';
 
-    let {data : gasPricesData, error, isLoaded} = useApiRequest(ethGasPriceURL);
+    let {data : gasPricesData, error, isLoaded} = useApiRequest('https://data-api.defipulse.com/api/v1/egs/api/ethgasAPI.json?api-key=19d66f3f573373abd0d393d5b1627b863a61892555ae3d07263f7e93c6d7');
     let {data : ethUSDPrice, error: erroreth, isLoaded : isLoadedEth} = useApiRequest(ethUSDPriceURL);
     
     const data = {
@@ -204,7 +204,7 @@ function DefiData() {
             "dominance_pct": 61.31169094095259
         }
     }
-    console.log(ethUSDPrice)
+    console.log(gasPricesData)
     return (
         <div className="defi-data">
             <div className="eth-gas">
