@@ -10,6 +10,12 @@ function DefiData() {
     // if (!isLoaded) {
     //   return <Loader />;
     // }
+    const ethGasPriceURL = process.env.REACT_APP_GAS_PRICE;
+    const ethUSDPriceURL ='https://min-api.cryptocompare.com/data/price?fsym=ETH&tsyms=USD,JPY,EUR';
+
+    let {data : gasPricesData, error, isLoaded} = useApiRequest(ethGasPriceURL);
+    let {data : ethUSDPrice, error: erroreth, isLoaded : isLoadedEth} = useApiRequest(ethUSDPriceURL);
+    
     const data = {
         "All": {
             "total": 90630229601,
@@ -198,10 +204,20 @@ function DefiData() {
             "dominance_pct": 61.31169094095259
         }
     }
-
+    console.log(ethUSDPrice)
     return (
-        <div className="news-feed">
+        <div className="defi-data">
+            <div className="eth-gas">
+            <h2>Gas Prices {ethUSDPrice.USD / 1000000000 * gasPricesData.fast}$ </h2>
+            <div>fast :  {gasPricesData.fast}</div>
+            <div>fastest :  {gasPricesData.fastest}</div>
+            <div>safelow :  {gasPricesData.safeLow}</div>
+            <div>average :  {gasPricesData.average}</div>
+            <div>block time: {gasPricesData.block_time}</div> 
+
+            </div>
             <div className="defi-market-data">
+            <h2>Defi</h2>
                 <div className="defi-market-column">
                     <div className="defi-market-box defi-market-total">
                         <h2>Total Value Locked (USD)</h2>
@@ -214,7 +230,25 @@ function DefiData() {
                           <span> {data.All.dominance_pct} %</span>
                     </div>               
                 </div>
+                <div className="tlv-market-column">
+                    <div className="tvl-defi">
+                        <h2>Total Value Locked (USD) in DeFi</h2>
+                        <span>{data.All.value.total.USD.value}</span>
+                    </div>             
+                    <div className="tvl-defi">
+                        <h2>ETH in DeFi</h2>
+                        <span>{data.All.value.total.ETH.value}</span>
+                    </div>  
+                    <div className="tvl-defi">
+                         <h2>BTC in DeFi</h2>
+                         <span>{data.All.value.total.BTC.value}</span>
+                    </div>  
+                </div>
+                <div className="devices-column">
+          
+                </div>
             </div>
+             
        </div>
     );
 }

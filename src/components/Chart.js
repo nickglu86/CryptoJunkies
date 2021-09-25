@@ -1,54 +1,55 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
+import useApiRequest from "./useApiRequest";
 import Currency from './Currency';
 import Loader from './Loader';
 
 
 function Chart(){
-    const [coins, setCoins] = useState([]);
     const [search, setSearch] = useState('');
+    const chartDataURL = process.env.REACT_APP_CRYPTO_INDEX;
+    
+    let { data : coins, error, isLoaded } = useApiRequest(chartDataURL);
 
-    useEffect( () => {
-        axios.get('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd&order=market_cap_desc&per_page=25&page=1&sparkline=false')
-        .then(res => {
-          setCoins(res.data);
-          document.getElementById("loader-mask").style.display = "none";
-        })
-        .catch(error => console.log(error));
-      }, []);
-     
-      const handleChange = e => {
+    if (error !== null) {
+      return <div> Error: {error.message}</div>;
+    }
+    if (!isLoaded) {
+      return <Loader />;
+    }
+
+    const handleChange = e => {
         setSearch(e.target.value)
-      }
+    };
     
-      const filteredCoins = coins.filter( coin =>
+    const filteredCoins = coins.filter( coin =>
         coin.name.toLowerCase().includes(search.toLowerCase())
-        )
-    
-    
+    );
+          
+    const chartHeader = () => {
+          return (
+            <div className="currency-container">     
+              <div className="chart-row chart-header">
+                <div className="coin">
+                  <form>
+                      <input type="text" placeholder="Search" className="search-input"  onChange={handleChange} />
+                  </form>
+                </div>
+                <div className="coin-data">
+                    <p className="coin-price">Price</p>
+                    <p className="coin-percent">24h %</p>
+                    <p className="coin-marketcap">Market Cap</p>
+                    <p className="coin-volume"> Volume(24h)</p>
+                    <p className="circ-supply">  Circulating Supply  </p>
+                </div>
+            </div>
+           </div>
+          );
+    }
+        
     return (
-            <div className="crypto-chart">
-                <Loader />
-                        {/* <div className="crypto-search">
-                            <h1>Search a currency:</h1>
-                         </div> */}
-                        <div id="first-currency-container" className="currency-container">
-                          <div className="chart-row chart-header">
-                            <div className="coin">
-                               <form>
-                                    <input type="text" placeholder="Search" className="search-input"  onChange={handleChange} />
-                                </form>
-                             </div>
-                            <div className="coin-data">
-                              <p className="coin-price">Price</p>
-                              <p className="coin-percent">24h %</p>
-                              <p className="coin-marketcap">Market Cap</p>
-                              <p className="coin-volume"> Volume(24h)</p>
-                              <p className="circ-supply">  Circulating Supply  </p>
-                            </div>
-                          </div>
-                        </div>
-                        {filteredCoins.map(coin => {
+            <div className="crypto-chart">                            
+                 {chartHeader()}                    
+                 {filteredCoins.map(coin => {
                         return(
                             <Currency key={coin.id} 
                             name={coin.name}
@@ -61,7 +62,7 @@ function Chart(){
                             circulatingSupply={coin.circulating_supply}
                             />
                         );
-                        })}
+                   })}                    
             </div>
         );
 }

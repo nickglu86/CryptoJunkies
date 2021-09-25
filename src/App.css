@@ -95,7 +95,7 @@ header nav a[data-dev=indev]::after {
 
 /* Loader End */
 
-.crypto-chart, .crypto-news{
+.crypto-index, .crypto-news, .defi, .crypto-metrics, .invest{
   position: relative;
   width: 100%;
   margin-top: 20px;
@@ -265,11 +265,140 @@ p.coin-percent span {
   font-size: 16px;
 }
 
-/* Metrics Page */
-.fear-and-greed{
+/* DEFi Page */
+
+.defi-data{
   display: none;
 }
+/* Metrics Page */
+.fear-and-greed{
+  /* display: none; */
+  display: flex;
+  justify-content: center;
+}
+.gaf-elem{
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 5px;
+    margin: 15px 0;
+}
+.gaf-lbl{
+  font-weight: 700;
+  margin-top: 4px;
+}
 
+.fear-and-greed img , .history-data{
+  width: 400px;
+}
+.history-data, .history-data * {
+  color: black;
+  background-color: white;
+}
+.history-data{
+  padding: 30px 40px 0;
+}
+.gaf-values{
+  padding: 20px 0;
+}
+.gaf-num-val {
+   width: 40px;
+    border-radius: 25px;
+    text-align: center;
+    line-height: 40px;
+    font-size: 22px;
+    color: white;
+    letter-spacing: 1px;
+}
+.gaf-elem[gaf-attr="Fear"] .gaf-lbl{
+  color: #e39d64;
+}
+.gaf-elem[gaf-attr="Extreme Fear"] .gaf-lbl {
+  color: #db7d5b;
+}
+.gaf-elem[gaf-attr="Neutral"] .gaf-lbl {
+  color: #dfce60;
+}
+.gaf-elem[gaf-attr="Greed"] .gaf-lbl{
+  color: #9bbe44;
+}
+.gaf-elem[gaf-attr="Extreme Greed"] .gaf-lbl{
+  color: #79d75d;
+}
+.gaf-elem[gaf-attr="Fear"] .gaf-num-val{
+  background-color: #e39d64;
+}
+.gaf-elem[gaf-attr="Extreme Fear"] .gaf-num-val {
+  background-color: #db7d5b;
+}
+.gaf-elem[gaf-attr="Neutral"] .gaf-num-val {
+  background-color: #dfce60;
+}
+.gaf-elem[gaf-attr="Greed"] .gaf-num-val{
+  background-color: #9bbe44;
+}
+.gaf-elem[gaf-attr="Extreme Greed"] .gaf-num-val{
+  background-color: #79d75d;
+}
+
+/* Invest */
+.invest-container{
+  width: 900px;
+  margin: 0 auto;
+}
+.binance-wrapper, .cexio-wrapper {
+  margin: 20px 0 ;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  display: flex;
+}
+.binance, .cexio{
+  border-radius: 15px;
+  width: 450px;
+  min-height:  267px;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.binance{
+  height: 267px;
+  background-image: url('./imgs/binance.jpg');
+}
+.cexio{
+  background-image: url('./imgs/cex2.jpg');
+  background-position: right;
+}
+.binance-content, .cexio-content {
+  width: 50%;
+  padding: 10px 15px;
+  position: relative;
+}
+.invest-container h2{
+  margin: 10px 0;
+}
+.invest-container a {
+  text-decoration: none;
+}
+.sign-up {
+  margin-top: 10px;
+  font-size: 20px;
+  color: black;
+  background: white;
+  width: 150px;
+  text-align: center;
+  padding: 7px;
+  border-radius: 10px;
+  position: absolute;
+  right: 15px;
+  bottom: 10px;
+  font-weight: 700;
+}
+.cexio-content .sign-up{
+  background: #3ebce9;
+}
+.binance-content .sign-up{
+  background: #dbc72a;
+}
 /* Footer */
 footer a{
   text-decoration: none;
@@ -492,7 +621,7 @@ footer h4{
     }
 
     /* Crypto-Index Page */
-    section.crypto-index, section.crypto-news {
+    section.crypto-index, section.crypto-news, section.crypto-metrics, section.invest {
         width: 94%;
         margin: 0 auto;
         padding-top: 80px;
@@ -590,6 +719,31 @@ footer h4{
       .news-content p {
         opacity: 0.8;
     }
+
+    /* Metrics */
+    .fear-and-greed{
+      flex-direction: column;
+      align-items: center;
+    }
+    .fear-and-greed img, .history-data {
+      width: 100%;
+      max-width: 340px;
+   }
+   
+   /* Invest */
+   .invest-container {
+     width: 95%;
+   }
+   .binance-wrapper, .cexio-wrapper{
+     flex-direction: column;
+   }
+   .binance, .cexio {
+    width: 100%;
+   }
+   .binance-content, .cexio-content {
+    width: 100%;
+    padding-bottom: 80px;
+   }
 
     /* Footter */
     footer{
